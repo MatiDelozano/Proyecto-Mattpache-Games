@@ -1,16 +1,36 @@
-# React + Vite
+# 🎮 MATTPACHE GAMES | Proyecto Final React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el repositorio del proyecto final para el curso de React de Talento Tech, una aplicación de catálogo de videojuegos construida con **React.js** y **Bootstrap**.
 
-Currently, two official plugins are available:
+## 💻 Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Frontend:** React.js
+* **Estilos:** React-Bootstrap
+* **Enrutamiento:** React Router DOM
+* **Datos:** API Mockeada (MockAPI)
 
-## React Compiler
+## ✨ Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+La aplicación implementa las siguientes características clave:
 
-## Expanding the ESLint configuration
+* **Catálogo Completo:** Muestra todos los productos paginados en la ruta `/` (Inicio).
+* **Buscador Local:** Permite filtrar los juegos por nombre (`title`) dentro del catálogo principal y la sección de Ofertas.
+* **Paginación Dinámica:** Divide el catálogo en páginas de 8 productos.
+* **Sección de Ofertas:** Muestra solo los productos marcados con `offer: true` en la ruta `/ofertas`.
+* **Carga de Datos:** Obtiene la información de los videojuegos desde una API externa simulada.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Instalación y Uso Local
+
+Sigue estos pasos para clonar el proyecto y ejecutarlo en tu máquina local.
+
+### Prerrequisitos
+
+Necesitas tener **Node.js** y **npm** (Node Package Manager) instalados en tu sistema.
+
+### 1. Clonar el Repositorio
+
+Abre tu terminal y ejecuta el siguiente comando para descargar el proyecto desde GitHub:
+
+```bash
+git clone [https://github.com/MatiDelozano/Proyecto-Final-React-Games-.git](https://github.com/MatiDelozano/Proyecto-Final-React-Games-.git)
+
