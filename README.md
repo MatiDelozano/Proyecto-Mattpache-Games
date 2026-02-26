@@ -1,4 +1,4 @@
-# 🎮 Proyecto Desarrollo de Software 2025 - Mattpache Games Store
+# 🎮 Proyecto Desarrollo de Software - Mattpache Games Store
 
 Aplicación e-commerce desarrollada en React con implementación de caché en backend utilizando Redis.
 
@@ -74,21 +74,49 @@ Redis se ejecuta en contenedor Docker:
 
 docker run -d -p 6379:6379 redis
 
-# Cómo ejecutar el proyecto:
+# Funcionamiento del catálogo de juegos:
 
-# Backend: 
+La aplicación implementa las siguientes características clave:
 
+* *Catálogo Completo:* Muestra todos los productos paginados en la ruta / (Inicio).
+* *Buscador Local:* Permite filtrar los juegos por nombre (title) dentro del catálogo principal y la sección de Ofertas.
+* *Paginación Dinámica:* Divide el catálogo en páginas de 8 productos.
+* *Sección de Ofertas:* Muestra solo los productos marcados con offer: true en la ruta /ofertas.
+* *Carga de Datos:* Obtiene la información de los videojuegos desde una API externa simulada.
+
+
+# Cómo ejecutar el proyecto: 
+
+Sigue estos pasos para clonar el proyecto y ejecutarlo en tu máquina local.
+
+# Prerrequisitos
+
+Necesitas tener *Node.js* , *npm* (Node Package Manager) y *Docker Desktop*  instalados en tu sistema.
+
+# 1. Clonar el Repositorio
+
+Abre tu terminal y ejecuta el siguiente comando para descargar el proyecto desde GitHub:
+
+git clone [https://github.com/MatiDelozano/Proyecto-Mattpache-Games
+-.git](https://github.com/MatiDelozano/Proyecto-Mattpache-Games
+-.git)
+
+# 2. Backend: 
+
+Parados en la terminal de nuestro proyecto ejecutamos:
 cd backend
-npm install
-node app.js
+1) npm install
+2) node app.js
 
 Servidor disponible en:
 http://localhost:3000
 
-# Frontend: 
+# 3. Frontend: 
 
-npm install
-npm run dev
+Parados en la terminal de nuestro proyecto ejecutamos:
+cd backend
+1) npm install
+2) npm run dev
 
 # El objetivo del proyecto fue:
 
@@ -97,9 +125,7 @@ npm run dev
 - Integrar frontend y backend en arquitectura desacoplada.
 - Aplicar conceptos de optimización de APIs.
 
-# Autor: 
-
-Proyecto desarrollado por: Matias Delozano
+# Proyecto desarrollado por:  Matias Delozano
 
 
 
