@@ -1,43 +1,108 @@
-# 🎮 MATTPACHE GAMES | Proyecto Final React
+# 🎮 Proyecto Desarrollo de Software 2025 - Mattpache Games Store
 
-Este es el repositorio del proyecto final para el curso de React de Talento Tech, una aplicación de catálogo de videojuegos construida con **React.js** y **Bootstrap**.
+Aplicación e-commerce desarrollada en React con implementación de caché en backend utilizando Redis.
 
-## 💻 Tecnologías Utilizadas
+Tecnologías Utilizadas:
 
-* **Frontend:** React.js
-* **Estilos:** React-Bootstrap
-* **Enrutamiento:** React Router DOM
-* **Datos:** API Mockeada (MockAPI)
+# Frontend
+- React
+- React Bootstrap
+- React Router
+- Context API
+- Vite
 
-## ✨ Funcionalidades
+# Backend
+- Node.js
+- Express
+- Redis
+- Docker
 
-La aplicación implementa las siguientes características clave:
+# Base de datos
+- MockAPI (simulación de base remota)
 
-* **Catálogo Completo:** Muestra todos los productos paginados en la ruta `/` (Inicio).
-* **Buscador Local:** Permite filtrar los juegos por nombre (`title`) dentro del catálogo principal y la sección de Ofertas.
-* **Paginación Dinámica:** Divide el catálogo en páginas de 8 productos.
-* **Sección de Ofertas:** Muestra solo los productos marcados con `offer: true` en la ruta `/ofertas`.
-* **Carga de Datos:** Obtiene la información de los videojuegos desde una API externa simulada.
+# Arquitectura del Proyecto:
 
-## 🚀 Instalación y Uso Local
+El proyecto implementa una arquitectura con separación de responsabilidades:
 
-Sigue estos pasos para clonar el proyecto y ejecutarlo en tu máquina local.
+Frontend  
+↓  
+Backend (Express)  
+↓  
+Redis (Cache)  
+↓  
+MockAPI (Base de datos simulada)
 
-### Prerrequisitos
+# Implementación de Caché con Redis:
 
-Necesitas tener **Node.js** y **npm** (Node Package Manager) instalados en tu sistema.
+Se implementó un sistema de caché para optimizar el endpoint:
 
-### 1. Clonar el Repositorio
+GET /products
 
-Abre tu terminal y ejecuta el siguiente comando para descargar el proyecto desde GitHub:
+# Funcionamiento:
 
-```bash
-git clone [https://github.com/MatiDelozano/Proyecto-Final-React-Games-.git](https://github.com/MatiDelozano/Proyecto-Final-React-Games-.git)
+1. El frontend solicita los productos al backend.
+2. El backend verifica si existen en Redis:
+   - ✅ Si existen → responde desde CACHE.
+   - ❌ Si no existen → consulta MockAPI, guarda en Redis y responde desde DATABASE.
+3. La caché tiene una duración de 60 segundos (TTL).
 
-Ingresar los siguientes comandos: 
+Se simula una base de datos lenta con un delay de 2 segundos para evidenciar la mejora de rendimiento.
 
-cd Proyecto-Final-React-Games-
+# Evidencia de Mejora:
+
+Primera petición:
+- Fuente: DATABASE
+- Tiempo: ~2000 ms
+
+Segunda petición:
+- Fuente: CACHE
+- Tiempo: < 50 ms
+
+Reducción aproximada del tiempo de respuesta: 95%+
+
+# Invalidación de Caché:
+
+Se implementó el endpoint:
+
+POST /cache/invalidate
+
+Permite borrar manualmente la caché y forzar nueva consulta a la base.
+
+# 🐳 Redis en Docker
+
+Redis se ejecuta en contenedor Docker:
+
+docker run -d -p 6379:6379 redis
+
+# Cómo ejecutar el proyecto:
+
+# Backend: 
+
+cd backend
+npm install
+node app.js
+
+Servidor disponible en:
+http://localhost:3000
+
+# Frontend: 
 
 npm install
-
 npm run dev
+
+# El objetivo del proyecto fue:
+
+- Implementar una solución de caché con Redis.
+- Analizar la mejora de rendimiento.
+- Integrar frontend y backend en arquitectura desacoplada.
+- Aplicar conceptos de optimización de APIs.
+
+# Autor: 
+
+Proyecto desarrollado por: Matias Delozano
+
+
+
+
+
+
