@@ -74,21 +74,24 @@ Redis se ejecuta en contenedor Docker:
 
 docker run -d -p 6379:6379 redis
 
-# Cómo ejecutar el proyecto:
+# Cómo ejecutar el proyecto: 
 
 # Backend: 
 
+Parados en la terminal de nuestro proyecto ejecutamos:
 cd backend
-npm install
-node app.js
+1) npm install
+2) node app.js
 
 Servidor disponible en:
 http://localhost:3000
 
 # Frontend: 
 
-npm install
-npm run dev
+Parados en la terminal de nuestro proyecto ejecutamos:
+cd backend
+1) npm install
+2) npm run dev
 
 # El objetivo del proyecto fue:
 
@@ -97,9 +100,7 @@ npm run dev
 - Integrar frontend y backend en arquitectura desacoplada.
 - Aplicar conceptos de optimización de APIs.
 
-# Proyecto desarrollado por: 
-
-# Matias Delozano
+# Proyecto desarrollado por:  Matias Delozano
 
 
 
