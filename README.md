@@ -1,4 +1,4 @@
-# 🎮 Proyecto Desarrollo de Software 2025 - Mattpache Games Store
+# 🎮 Proyecto Desarrollo de Software - Mattpache Games Store
 
 Aplicación e-commerce desarrollada en React con implementación de caché en backend utilizando Redis.
 
@@ -97,9 +97,9 @@ npm run dev
 - Integrar frontend y backend en arquitectura desacoplada.
 - Aplicar conceptos de optimización de APIs.
 
-# Autor: 
+# Proyecto desarrollado por: 
 
-Proyecto desarrollado por: Matias Delozano
+# Matias Delozano
 
 
 
