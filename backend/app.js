@@ -7,25 +7,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-/* ==============================
-   🔴 CONFIG REDIS
-============================== */
+/* Configuracion de Redis */
 
 const redisClient = createClient({
   url: "redis://localhost:6379",
 });
 
 redisClient.on("error", (err) =>
-  console.log("❌ Redis Client Error", err)
+  console.log(" Redis Client Error", err)
 );
 
 await redisClient.connect();
 
-console.log("✅ Conectado a Redis");
+console.log(" Conectado a Redis");
 
-/* ==============================
-   🔵 GET PRODUCTS (con cache)
-============================== */
+/* get productos (con cache) */
 
 app.get("/products", async (req, res) => {
   const start = Date.now();
@@ -68,21 +64,17 @@ app.get("/products", async (req, res) => {
   }
 });
 
-/* ==============================
-   🧹 INVALIDAR CACHE
-============================== */
+/* invalidar cache */
 
 app.post("/cache/invalidate", async (req, res) => {
   await redisClient.del("products");
   res.json({ message: "Cache invalidada correctamente" });
 });
 
-/* ==============================
-   🚀 SERVER
-============================== */
+/* Server */
 
 const PORT = 3000;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
+  console.log(` Servidor corriendo en http://localhost:${PORT}`);
 });
