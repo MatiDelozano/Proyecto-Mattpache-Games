@@ -1,4 +1,4 @@
-# 🎮 Proyecto Desarrollo de Software - Mattpache Games Store
+# Proyecto Desarrollo de Software - Mattpache Games Store
 
 Aplicación e-commerce desarrollada en React con implementación de caché en backend utilizando Redis.
 
@@ -24,7 +24,7 @@ Tecnologías Utilizadas:
 
 El proyecto implementa una arquitectura con separación de responsabilidades:
 
-Frontend  
+Frontend (React) + (CSS)
 ↓  
 Backend (Express)  
 ↓  
